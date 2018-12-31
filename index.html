@@ -5,236 +5,255 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript">
-            function login(){
-                var username = document.getElementById("name").value ;
-                var password = document.getElementById("pass").value ;
-                var UserName = "vaibhav";
-                var Password = "yukti";
-                if (UserName==username && Password==password)
-                {
-                    document.getElementById('home').style.display = "block" ;
-                    document.getElementById('login').style.display = "none" ;
-                    alert("welcome yukti!");
-                }
-                else
-                {
-                    document.getElementById('incorrect').style.display = "block";
-                    alert("something wents wrong!");
-                }
-            }
-        </script>
-        <style>
-        #login{
-            display:block;
-            background-color: #290229;
-            height: 100vh;
-        }
-        
-        #h1{
-            letter-spacing: 5px;
-        }
-        #a{
-            color: red ;
-            background-color: yellow;
-        }
-        #b{
-            color: aqua;
-            background-color: chartreuse;
-        }
-        #c{
-            color: rgb(8, 8, 216);
-            background-color: rgb(219, 17, 209);
-        }
-        #d{
-            color: chartreuse;
-            background-color: aqua;
-        }
-        #e{
-            color: rgb(5, 236, 36);
-            background-color: rgba(255, 0, 0, 0.76);
-        }
-        #f{
-            color: blueviolet;
-            background-color: crimson;
-        }
-        #g{
-            color:darkcyan;
-            background-color: lawngreen
-        }
-        #h{
-            color: indianred;
-            background-color: darkviolet
-        }
-        #home{
-            display: none;
-            background-color: white;
-        }
-        h2{
-            color: #f0f0f0;
-        }
-        #name{
-            width: 250px;
-            height: 30px;
-            margin-bottom: 5px;
-            background-color: cornflowerblue; 
-            border-radius: 25px;
-        }
-        #pass{
-            width: 250px;
-            height: 30px;
-            margin-bottom: 5px;
-            background-color: cornflowerblue; 
-            border-radius: 25px;
-        }
-        button{
-            width: 250px;
-            height: 30px;
-            margin-bottom: 5px;
-            background-color: rgb(80, 240, 6); 
-            border-radius: 25px;
-        }
-        #body {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        height: 10vh;
-        background: #240229;
-        background-color: #290229;
-    }
-    .loder{
-        margin-top: 5px;
-        position: relative;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background: linear-gradient(#14ffe9,#ffeb3b,#ff00e0);
-        animation: animate 0.5s linear infinite;
-        background-color: #290229;
-    }
-    .loder span{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: linear-gradient(#14ffe9,#ffeb3b,#ff00e0);
-        animation: animate 0.5s linear infinite;
-    }
-    @keyframes animate
-    {
-        0%{
-            transform: rotate(0deg);
-        }
-        100%{
-            transform: rotate(360deg);
-        }
-    }
-    .loder span:nth-child(1){
-        filter: blur(5px);
-    }
-    .loder span:nth-child(2){
-        filter: blur(10px);
-    }
-    .loder span:nth-child(3){
-        filter: blur(25px);
-    }
-    .loder span:nth-child(4){
-        filter: blur(50px);
-    }
-    .loder:after{
-        content: '';
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
-        background: #240229;
-        border-radius: 50%;
-    }
-        #incorrect{
-            display: none;
-        }
-        .container{
-            background-color: #86e6ec;
-            display: flex;
-            height: 20vh;
-        }
-        .diva{
-            height: 100vh;
-            background-color: rgb(43, 62, 236);
-        }
-        .divb{
-            height: 100vh;
-            background-color: rgb(99, 92, 92);
-        }
-       
-        </style>
+    <style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+#body {
+  background-color: #111;
+  background-image: radial-gradient(#333, #111);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center;
+  width:   97.5vw;
+  font-weight: 700;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#fly-in {
+  font-size: 4em;
+  margin: 40vh auto;
+  height: 20vh; 
+  text-transform: uppercase;
+}
+
+#fly-in span {
+  display: block;
+  font-size: .4em;
+  opacity: .8;
+}
+
+#fly-in div {
+  position: absolute;
+  margin: 2vh 0;
+  opacity: 0;
+  left: 10vw;
+  width: 80vw;
+  animation: switch 32s linear infinite;
+}
+
+#fly-in div:nth-child(2) { animation-delay: 4s}
+#fly-in div:nth-child(3) { animation-delay: 8s}
+#fly-in div:nth-child(4) { animation-delay: 12s}
+#fly-in div:nth-child(5) { animation-delay: 16s}
+#fly-in div:nth-child(6) { animation-delay: 20s}
+#fly-in div:nth-child(7) { animation-delay: 24s}
+#fly-in div:nth-child(8) { animation-delay: 28s}
+
+@keyframes switch {
+    0% { opacity: 0;filter: blur(20px); transform:scale(12)}
+    3% { opacity: 1;filter: blur(0); transform:scale(1)}
+    10% { opacity: 1;filter: blur(0); transform:scale(.9)}
+    13% { opacity: 0;filter: blur(10px); transform:scale(.1)}
+    80% { opacity: 0}
+    100% { opacity: 0}
+}
+.body {
+  font-family: "Montserrat", sans-serif;
+  background-image: url(https://www.msconnection.org/MSConnection/media/MSConnection/Blogs/Blog%20Feature%20Photos/connections.jpg?ext=.jpg);
+  height: 100vh;
+  width: 97.5vw;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.honeycomb {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  -webkit-transform: translateY(34.375px);
+          transform: translateY(34.375px);
+}
+.honeycomb-cell {
+  flex: 0 1 250px;
+  max-width: 250px;
+  height: 137.5px;
+  margin: 65.4761904762px 12.5px 25px;
+  position: relative;
+  padding: 0.5em;
+  text-align: center;
+  z-index: 1;
+}
+.honeycomb-cell__title {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  word-break: break-word;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.75em;
+  transition: opacity 350ms;
+}
+.honeycomb-cell__title > small {
+  font-weight: 300;
+  margin-top: 0.25em;
+}
+.honeycomb-cell__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.honeycomb-cell::before, .honeycomb-cell::after {
+  content: "";
+}
+.honeycomb-cell::before, .honeycomb-cell::after, .honeycomb-cell__image {
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  display: block;
+  position: absolute;
+  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+          clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  z-index: -1;
+}
+.honeycomb-cell::before {
+  background: #fff;
+  -webkit-transform: scale(1.055);
+          transform: scale(1.055);
+}
+.honeycomb-cell::after {
+  background: #3ea0eb;
+  opacity: 0.5;
+  transition: opacity 350ms;
+}
+.honeycomb-cell:hover .honeycomb-cell__title {
+  opacity: 0;
+}
+.honeycomb-cell:hover::before {
+  background: #72f88e;
+}
+.honeycomb-cell:hover::after {
+  opacity: 0;
+}
+.honeycomb__placeholder {
+  display: none;
+  opacity: 0;
+  width: 250px;
+  margin: 0 12.5px;
+}
+
+@media (max-width: 550px) {
+  .honeycomb-cell {
+    margin: 81.25px 25px;
+  }
+}
+@media (min-width: 550px) and (max-width: 825px) {
+  .honeycomb-cell:nth-child(3n) {
+    margin-right: calc(50% - 125px);
+    margin-left: calc(50% - 125px);
+  }
+
+  .honeycomb__placeholder:nth-child(3n + 5) {
+    display: block;
+  }
+}
+@media (min-width: 825px) and (max-width: 1100px) {
+  .honeycomb-cell:nth-child(5n + 4) {
+    margin-left: calc(50% - 275px);
+  }
+
+  .honeycomb-cell:nth-child(5n + 5) {
+    margin-right: calc(50% - 275px);
+  }
+
+  .honeycomb__placeholder:nth-child(5n),
+  .honeycomb__placeholder:nth-child(5n + 3) {
+    display: block;
+  }
+}
+@media (min-width: 1100px) {
+  .honeycomb-cell:nth-child(7n + 5) {
+    margin-left: calc(50% - 400px);
+  }
+
+  .honeycomb-cell:nth-child(7n + 7),
+  .honeycomb-cell:nth-child(7n + 5):nth-last-child(2) {
+    margin-right: calc(50% - 400px);
+  }
+
+  .honeycomb__placeholder:nth-child(7n + 7),
+  .honeycomb__placeholder:nth-child(7n + 9),
+  .honeycomb__placeholder:nth-child(7n + 11) {
+    display: block;
+  }
+}
+</style>
     </head>
-    <body>
-     <div id="login" align="center"> 
-         
-         <h1><span id="a" >H</span><span id="b">a</span><span id="c">p</span><span id="d">p</span><span id="e">y</span></h1>
-         <h1><span id="a" >B</span><span id="b">i</span><span id="c">r</span><span id="d">t</span><span id="e">h</span><span id="f">d</span><span id="g">a</span><span id="h">y</span></h1>
-         <h1><span id="a" >Y</span><span id="b">u</span><span id="c">k</span><span id="d">t</span><span id="e">i</span></h1>
-         <h2>for opening the main page first complete the authentication</h2>
-        <input type="email" value id="name" placeholder="username"><br>
-        <input type="password" value id="pass" placeholder="password"><br>
-        <button onclick="login()">login</button>
-        <div id="body">
-                <div class="loder">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    </div>
-    </div>
-    
-    <div id="home">
-        <div class="diva">
-            <div class="container" >
-                <svg width="640" height="480"  xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-                    <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
-                    <g class="layer">
-                     <title>Layer 1</title>
-                     <text fill="#00ff00" font-family="Cursive" font-size="24" font-style="italic" id="svg_5" stroke="#ff0000" stroke-width="0" style="cursor: move;" text-anchor="middle" transform="matrix(1.64026 0 0 1.5625 -211.225 -58.2188)" x="176.15539" xml:space="preserve" y="83.34">h</text>
-                     <text fill="#007fff" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_2" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.44738 0 0 1.10261 -41.1518 -4.1491)" x="99.5" xml:space="preserve" y="69.5">a</text>
-                     <text fill="#ff0000" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_4" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.19481 0 0 1.11688 -22.0866 -5.01299)" x="120.5" xml:space="preserve" y="69.5">p</text>
-                     <text fill="#ff00ff" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_7" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.28571 0 0 1.18182 -35.8795 -14.4545)" x="135.5" xml:space="preserve" y="72.5">p</text>
-                     <text fill="#ffff00" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_8" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.6 0 0 1.21212 -85.1156 -8.37879)" x="154.125" xml:space="preserve" y="66.325">y</text>
-                     <text fill="#ff0000" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_9" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.46667 0 0 1.15152 -94.4417 -6.28788)" x="209.5" xml:space="preserve" y="67.5">b</text>
-                     <text fill="#7f00ff" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_10" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.44444 0 0 1 -101.833 0)" x="229.73077" xml:space="preserve" y="71.5">i</text>
-                     <text fill="#3f7f00" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_11" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.36905 0 0 1.05128 -23.2353 -12.6923)" x="196.59565" xml:space="preserve" y="79.59756">r</text>
-                     <text fill="#0000ff" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_12" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.61964 0 0 1.27472 -98.8437 -212.484)" x="223.41289" xml:space="preserve" y="223.28378">t</text>
-                     <text fill="#ff7f00" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_13" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.21429 0 0 1.15152 -59.2634 -6.59091)" x="283.5" xml:space="preserve" y="69.5">h</text>
-                     <text fill="#ffff00" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_14" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.23529 0 0 1.30303 -70.2206 -12.5758)" x="305.5" xml:space="preserve" y="67.5">d</text>
-                     <text fill="#007fff" font-family="Cursive" font-size="24" id="svg_15" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.30769 0 0 1.09091 -99.4952 -4.22727)" x="329.5" xml:space="preserve" y="72.5">a</text>
-                     <text fill="#00ff00" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_16" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" x="350.5" xml:space="preserve" y="75.5">y</text>
-                     <text fill="#00ff00" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_17" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.5 0 0 1.15152 -188.625 -5.83333)" x="384.5" xml:space="preserve" y="64.5">y</text>
-                     <text fill="#ff007f" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_18" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" x="407.5" xml:space="preserve" y="67.5">u</text>
-                     <text fill="#ffff00" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_19" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.26667 0 0 1.18182 -111.737 -6.81818)" x="425.5" xml:space="preserve" y="63.5">k</text>
-                     <text fill="#ff0000" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_20" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.08852 0 0 1.21212 -39.0235 -15.3788)" x="446.5" xml:space="preserve" y="65.5">t</text>
-                     <text fill="#00ff7f" font-family="Cursive" font-size="24" font-style="italic" font-weight="bold" id="svg_21" stroke="#ff0000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" transform="matrix(1.22222 0 0 1.12121 -101.361 -4.90909)" x="459.5" xml:space="preserve" y="66.5">i</text>
-                    </g>
-                   </svg>
-                </div>
-                <img src="https://www.birthdaywishes.expert/wp-content/uploads/2015/06/Happy-birthday-wish-cup-cake-candles-balloons.jpg" width="1070px" height="500px">
-        </div>
-        <div class="divb">
-            <div>
-                
-            </div>
-        </div>
-        <div class="divc">
+ <body><div id="body">
+<div id="fly-in">  
+<div><span>One of the greatest</span> joys of this season</div>
+<div> is the  opportunity<span> to say thank you</span></div>
+<div> and to wish you <span> the very best for the New Year</span></div>
+<div><span>Wish you </span> success</div>
+<div><span>wish you</span>very happy new year</div>
+<div>by<span>vaibhav buccha</span></div>
+<div>glance <span> on mine profile's</span></div>
+<div><span>mentioned</span> below.</div>
+</div>
+</div>
+<div class="body">
+        <ul class="honeycomb" lang="es">
+                <li class="honeycomb-cell">
+                  <img class="honeycomb-cell__image" src="https://en.bitnovosti.com/wp-content/uploads/2018/06/GitHub.jpg">
+                  <div class="honeycomb-cell__title"><a href="https://github.com/vaibhavbuccha">vaibhav<br>-github</a></div>
+                </li>
+                <li class="honeycomb-cell">
+                  <img class="honeycomb-cell__image" src="https://lh3.googleusercontent.com/z0gMa0aRAkLxjS-lVaSOO1Ygb48rttOcR5iRpgJPTM6_enkfeCuN37JWm_9qcHJaJw">
+                  <div class="honeycomb-cell__title"><a href="https://www.linkedin.com/in/vaibhavbuccha/">vaibhav<br>-linked.in</a></div>
+                </li>
+                <li class="honeycomb-cell">
+                  <img class="honeycomb-cell__image" src="https://i.pinimg.com/originals/8a/a2/7d/8aa27d703617a4b085af55b2ecd5bc0f.jpg">
+                  <div class="honeycomb-cell__title"><a href="https://about.me/vaibhavbuccha">vaibhav<br>-aboutme</a></div>
+                </li>
+                <li class="honeycomb-cell">
+                  <img class="honeycomb-cell__image" src="https://pbs.twimg.com/profile_images/1013798240683266048/zRim1x6M.jpg">
+                  <div class="honeycomb-cell__title"><a href="https://www.linkedin.com/in/vaibhavbuccha/">vaibhav<br>-twitter</a></div>
+                </li>
+                <li class="honeycomb-cell">
+                  <img class="honeycomb-cell__image" src="https://lh3.googleusercontent.com/LZdsQGEbRqcZIjvWdiJTjlaGQJQjP097FAIvl4XfOi_XHagmC83Lc04PDxaq8Ml6xJk">
+                  <div class="honeycomb-cell__title"><a href="https://www.instagram.com/vaibhavbuccha/">vaibhav<br>-instagram</a></div>
+                </li>
+                <li class="honeycomb-cell">
+                  <img class="honeycomb-cell__image" src="https://blog.addthiscdn.com/wp-content/uploads/2015/11/logo-facebook.png">
+                  <div class="honeycomb-cell__title"><a href="https://www.facebook.com/vaibhavbuccha1">vaibhav<br>-facebook</a></div>
+                </li>
+                <li class="honeycomb-cell">
+                  <img class="honeycomb-cell__image" src="https://s3.amazonaws.com/media.eremedia.com/wp-content/uploads/2018/05/31112343/Codepen.png">
+                  <div class="honeycomb-cell__title"><a href="https://codepen.io/vaibhavbuccha/">vaibhav<br>-codepen</a></div>
+                </li>
+                <li class="honeycomb-cell honeycomb__placeholder"></li>
+              </ul>
+</div>
 
-        </div>
-        <div class="divd">
 
-        </div>
-    </div>
-    <div id="incorrect">
-        information is incorrect
-    </div>
     </body>
 </html>
